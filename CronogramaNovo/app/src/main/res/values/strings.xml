@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CronogramaNovo</string>
+    <string name="title_activity_form">Cadastrar materia</string>
+    <string name="subject_description">Descricao da materia</string>
+    <string name="fab_description">Adiconar Materia</string>
+    <string name="save_task">Salvar</string>
+</resources>

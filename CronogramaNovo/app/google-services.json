@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "1078697315757",
+    "project_id": "cronogramamaterias",
+    "storage_bucket": "cronogramamaterias.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078697315757:android:dcb1903a43c5890cfae524",
+        "android_client_info": {
+          "package_name": "br.edu.ifsuldeminas.mch.tarefas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078697315757-5ai8rup85giu5nqm4j2c1bet2620vt4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJPmLCjFrJ72qLWlvCUU_Q-TZJoVzhjR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078697315757-5ai8rup85giu5nqm4j2c1bet2620vt4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078697315757:android:84847414ed87c1e4fae524",
+        "android_client_info": {
+          "package_name": "renansander.cronogramanovo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078697315757-fjiiveh65m4illstd8v116mn340ph7e3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "renansander.cronogramanovo",
+            "certificate_hash": "df0ad52f2c9c382edad414c2683715fe5fa380d6"
+          }
+        },
+        {
+          "client_id": "1078697315757-5ai8rup85giu5nqm4j2c1bet2620vt4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJPmLCjFrJ72qLWlvCUU_Q-TZJoVzhjR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078697315757-5ai8rup85giu5nqm4j2c1bet2620vt4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
