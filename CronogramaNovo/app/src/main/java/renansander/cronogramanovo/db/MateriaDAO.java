@@ -3,6 +3,7 @@ package renansander.cronogramanovo.db;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -26,7 +27,6 @@ public class MateriaDAO {
     private static final String WEEK_DAY = "week_day";
     private static final String HOUR = "hour";
     private static final String ACT = "active";
-    private static final String DT_CHANGE = "date_changed";
 
     //para ter acesso a base no firebase
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -55,9 +55,10 @@ public class MateriaDAO {
                                 String room = doc.get(ROOM, String.class);
                                 String week_day = doc.get(WEEK_DAY, String.class);
                                 String hour = doc.get(HOUR, String.class);
-                                //Boolean act = doc.get(ACT, Boolean.class);
-                                Object activeValue = doc.get(ACT);
-                                Boolean act = activeValue instanceof Boolean ? (Boolean) activeValue : true;
+                                Boolean act = doc.get(ACT, Boolean.class);
+                                //Object activeValue = doc.get(ACT);
+                                //Boolean act = activeValue instanceof Boolean ?
+                                //        (Boolean) activeValue : true;
                                 Materias materia = new Materias(id, des, room, week_day, hour, act);
                                 materia.setActive(act);
 
@@ -67,24 +68,21 @@ public class MateriaDAO {
                         }
                     }
                 });
+
     }
 
-    public boolean save(Materias task){
-
-        task.setDateChanged();
+    public boolean save(Materias materia){
 
         Map<String, Object> taskMap = new HashMap<>();
-        taskMap.put(DESC, task.getDescription());
-        taskMap.put(ACT, task.getActive());
-        taskMap.put(DT_CHANGE, task.getDescription());
+        taskMap.put(DESC, materia.getDescription());
+        taskMap.put(ACT, materia.getActive());
+        //taskMap.put(DT_CHANGE, task.getDescription());
         db.collection(COLLECTION)//recupera colecao
-                .add(task);//insere doc
+                .add(materia);//insere doc
         return true;
     }
 
     public void update(Materias materia){
-
-        materia.setDateChanged();
 
         Map<String, Object> materiaMap = new HashMap<>();
         materiaMap.put(DESC, materia.getDescription());
@@ -92,7 +90,6 @@ public class MateriaDAO {
         materiaMap.put(WEEK_DAY, materia.getWeek_day());
         materiaMap.put(HOUR, materia.getHour());
         materiaMap.put(ACT, materia.getActive());
-        materiaMap.put(DT_CHANGE, materia.getDescription());
         //recupera a colecao
         db.collection(COLLECTION)
                 .document(materia.getId().toString())//recupera doc

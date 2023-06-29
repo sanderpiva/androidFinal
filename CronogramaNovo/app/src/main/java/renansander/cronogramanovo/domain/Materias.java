@@ -12,9 +12,6 @@ public class Materias implements Serializable {
     private String hour;
     private Boolean active;
 
-    private Date dateChanged;
-
-
     public Materias(String id, String desc, String room,
                     String week_day, String hour, Boolean active){
 
@@ -86,14 +83,6 @@ public class Materias implements Serializable {
                 String.format("%s -%s -%s -%s -%s", this.getDescription(),
                         this.getRoom(), this.getWeek_day(), this.getHour(), this.getActiveString());
         return formatted;
-    }
-
-    public Date getDateChanged() {
-        return dateChanged;
-    }
-
-    public void setDateChanged() {
-        this.dateChanged = Calendar.getInstance().getTime();
     }
 
 }
